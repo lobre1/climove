@@ -5,8 +5,11 @@
 #include <unistd.h>
 #include <termios.h>
 
-#define X 9
-#define Y 9
+#define X 50
+#define Y 50
+
+const char bg='.';
+const char mov='@';
 
 int posx = (X/2)+1;
 int posy = (Y/2)+1;
@@ -29,7 +32,7 @@ void delay(int number_of_seconds)
 void boardInit(){
 	for (int i=0; i<=X-1; i++) {
 		for (int j=0; j<=Y-1; j++) {
-			grid[i][j]='#';
+			grid[i][j]=bg;
 		}
 	}
 }
@@ -47,21 +50,21 @@ void controls( char input ){
 	switch (input){
 		case 'w':
 			posy--;
-			grid[posy][posx-1]='#';
+			grid[posy][posx-1]=bg;
 			break;
 
 		case 's':
-			grid[posy-1][posx-1]='#';
+			grid[posy-1][posx-1]=bg;
 			posy++;
 			break;
 
 		case 'a':
 			posx--;
-			grid[posy-1][posx]='#';
+			grid[posy-1][posx]=bg;
 			break;
 
 		case 'd':
-			grid[posy-1][posx-1]='#';
+			grid[posy-1][posx-1]=bg;
 			posx++;
 			break;
 	}
@@ -69,7 +72,7 @@ void controls( char input ){
 
 void mainLoop(){
 	char r;
-	grid[posy-1][posx-1]='X';
+	grid[posy-1][posx-1]=mov;
 	boardRefresh();
 	scanf("%c", &r);
 	controls(r);
