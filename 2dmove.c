@@ -5,8 +5,8 @@
 #include <unistd.h>
 #include <termios.h>
 
-#define X 50
-#define Y 50
+#define X 9
+#define Y 9
 
 const char bg='.';
 const char mov='@';
