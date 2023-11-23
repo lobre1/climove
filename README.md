@@ -1,3 +1,5 @@
 # climove
 2d (scuffed) movement in cli <3
-[![asciicast](./climove.gif)]("Demo")
+
+<img src="./climove.gif" width="500" height="500"/>
+
