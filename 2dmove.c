@@ -6,7 +6,7 @@
 #include <termios.h>
 
 #define X 9
-#define Y X
+#define Y 9
 
 int posx = (X/2)+1;
 int posy = (Y/2)+1;
